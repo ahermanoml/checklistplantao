@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Peso Ideal e Volume Corrente</title>
+    <script>
+        function calcularPesoVolume() {
+            var altura = document.getElementById('altura').value;
+            var sexo = document.querySelector('input[name="sexo"]:checked').value;
+            var pesoIdeal;
+            var volumeCorrente;
+
+            if (sexo === 'masculino') {
+                pesoIdeal = 50 + 0.91 * (altura - 152.4);
+            } else {
+                pesoIdeal = 45.5 + 0.91 * (altura - 152.4);
+            }
+
+            volumeCorrente = Math.round(pesoIdeal * 6)  + " a " + Math.round(pesoIdeal * 8) + " ml";
+
+            document.getElementById('resultado').innerHTML = 
+                "Peso Ideal: " + pesoIdeal.toFixed(2) + " kg<br>" +
+                "Faixa de Volume Corrente: " + volumeCorrente;
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculadora de Peso Ideal e Volume Corrente</h2>
+    <label for="altura">Altura (cm):</label>
+    <input type="number" id="altura" placeholder="Insira a altura em cm"><br><br>
+
+    <input type="radio" id="masculino" name="sexo" value="masculino" checked>
+    <label for="masculino">Masculino</label><br>
+    <input type="radio" id="feminino" name="sexo" value="feminino">
+    <label for="feminino">Feminino</label><br><br>
+
+    <button onclick="calcularPesoVolume()">Calcular</button>
+
+    <h3>Resultado:</h3>
+    <div id="resultado"></div>
+</body>
+</html>
