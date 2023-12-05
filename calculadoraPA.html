@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Pressão Arterial Sistólica Mínima</title>
+    <script>
+        function calcularPressaoArterial() {
+            var idade = document.getElementById("idade").value;
+            var pressaoArterial = 70 + (2 * idade);
+            document.getElementById("resultado").innerHTML = "Pressão Arterial Sistólica Mínima Estimada: " + pressaoArterial + " mmHg";
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculadora de Pressão Arterial Sistólica Mínima para Crianças</h2>
+    <p>Idade da Criança (em anos): <input type="number" id="idade" name="idade"></p>
+    <button onclick="calcularPressaoArterial()">Calcular</button>
+    <p id="resultado"></p>
+</body>
+</html>
