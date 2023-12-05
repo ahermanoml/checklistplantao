@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Calculadora de Peso Ideal e Volume Corrente</title>
+    <link rel="stylesheet" href="style.css">
     <script>
         function calcularPesoVolume() {
             var altura = document.getElementById('altura').value;
@@ -29,7 +30,7 @@
     </script>
 </head>
 <body>
-    <h2>Calculadora de Peso Ideal e Volume Corrente</h2>
+    <h2>Parâmetros Ventilatórios (VCV)</h2>
     <label for="altura">Altura (cm):</label>
     <input type="number" id="altura" placeholder="Insira a altura em cm"><br><br>
 
@@ -45,7 +46,25 @@
 
     <button onclick="calcularPesoVolume()">Calcular</button>
 
-    <h3>Resultado:</h3>
+    <h2>Volume Corrente</h2>
     <div id="resultado"></div>
+    <div id="observar">
+        <h2>Outros Parâmetros</h2>
+        <ul>
+            <li>FR: entre 10 e 20 irpm</li>
+            <li>PEEP: iniciar em 5cmH20</li>
+            <li>FiO2: começar em 100%</li>
+            <li>Fluxo: 40 a 60L/min</li>
+        </ul>
+        <h2>Observar</h2>
+        <ul>
+            <li>Gasometria Arterial: pH entre 7,35 e 7,45</li>
+            <li>Gasometria Arterial: pCO2 entre 35 e 45cmH20</li>
+            <li>Gasometria Arterial: pO2 entre 80 e 100cmH20</li>
+            <li>Pressão Pico Máxima (PIP): 35cmH20</li>
+            <li>Pressão Platô Máxima: 30cmH20 (fazer pausa inspiratória de 1 seg para aferir)</li>
+        </ul> 
+    </div>
+
 </body>
 </html>
