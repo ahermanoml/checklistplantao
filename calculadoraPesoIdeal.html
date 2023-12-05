@@ -6,6 +6,7 @@
         function calcularPesoVolume() {
             var altura = document.getElementById('altura').value;
             var sexo = document.querySelector('input[name="sexo"]:checked').value;
+            var situacao = document.querySelector('input[name="situacao"]:checked').value;
             var pesoIdeal;
             var volumeCorrente;
 
@@ -15,7 +16,11 @@
                 pesoIdeal = 45.5 + 0.91 * (altura - 152.4);
             }
 
-            volumeCorrente = Math.round(pesoIdeal * 6)  + " a " + Math.round(pesoIdeal * 8) + " ml";
+            if (situacao === 'normal') {
+                volumeCorrente = Math.round(pesoIdeal * 6) + " a " + Math.round(pesoIdeal * 8) + " ml";
+            } else { // SARA
+                volumeCorrente = Math.round(pesoIdeal * 4) + " a " + Math.round(pesoIdeal * 6) + " ml";
+            }
 
             document.getElementById('resultado').innerHTML = 
                 "Peso Ideal: " + pesoIdeal.toFixed(2) + " kg<br>" +
@@ -32,6 +37,11 @@
     <label for="masculino">Masculino</label><br>
     <input type="radio" id="feminino" name="sexo" value="feminino">
     <label for="feminino">Feminino</label><br><br>
+
+    <input type="radio" id="normal" name="situacao" value="normal" checked>
+    <label for="normal">Situação Normal</label><br>
+    <input type="radio" id="sara" name="situacao" value="sara">
+    <label for="sara">SARA</label><br><br>
 
     <button onclick="calcularPesoVolume()">Calcular</button>
 
