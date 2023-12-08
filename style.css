@@ -27,9 +27,13 @@ input[type="checkbox"] {
 }
 
 a:link {
-    color: blue;
+    color: rgb(0, 186, 211);
 }
 
 a:visited {
     color: red;
+}
+
+#resultado {
+    margin-top: 20px;
 }

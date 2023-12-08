@@ -23,9 +23,25 @@
                 volumeCorrente = Math.round(pesoIdeal * 4) + " a " + Math.round(pesoIdeal * 6) + " ml";
             }
 
-            document.getElementById('resultado').innerHTML = 
-                "Peso Ideal: " + pesoIdeal.toFixed(2) + " kg<br>" +
-                "Faixa de Volume Corrente: " + volumeCorrente;
+            var resultadoDiv = document.getElementById('resultado');
+
+            // Limpa o conteúdo anterior
+            resultadoDiv.innerHTML = '';
+
+            // Cria um novo elemento h3
+            var resultadoH3 = document.createElement('h3');
+            resultadoH3.innerText = "Peso Ideal: " + pesoIdeal.toFixed(2) + " kg\n" +
+                                    "Faixa de Volume Corrente: " + volumeCorrente;
+
+            // Insere o elemento h3 no div de resultado
+            resultadoDiv.appendChild(resultadoH3);
+
+
+
+
+
+
+
         }
     </script>
 </head>
@@ -46,7 +62,6 @@
 
     <button onclick="calcularPesoVolume()">Calcular</button>
 
-    <h2>Volume Corrente</h2>
     <div id="resultado"></div>
     <div id="observar">
         <h2>Outros Parâmetros</h2>
@@ -61,6 +76,7 @@
             <li>Gasometria Arterial: pH entre 7,35 e 7,45</li>
             <li>Gasometria Arterial: pCO2 entre 35 e 45cmH20</li>
             <li>Gasometria Arterial: pO2 entre 80 e 100cmH20</li>
+            <li>Gasometria Arterial: HCO3 entre 22 e 26 mEq</li>
             <li>Pressão Pico Máxima (PIP): 35cmH20</li>
             <li>Pressão Platô Máxima: 30cmH20 (fazer pausa inspiratória de 1 seg para aferir)</li>
         </ul> 
