@@ -64,25 +64,56 @@ footer p {
     margin: 0;
 }
 
-/* Adicione outras regras CSS conforme necessário */
+main {
+            padding: 20px; /* Espaço interno */
+            text-align: center; /* Centralizar o texto */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .topic {
+            background-color: #6c757d; /* Cor de fundo */
+            color: #f8f9fa;
+            margin: 10px 0; /* Margem entre os tópicos */
+            padding: 15px;
+            border-radius: 5px; /* Bordas arredondadas */
+            width: 80%; /* Largura dos tópicos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+            transition: transform 0.3s ease-in-out; /* Animação */
+        }
+
+        .topic:hover {
+            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+        }
+
+        .topic a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .topic a:hover, .topic a:focus {
+            color: #adb5bd;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Guia do Médico Recém Formado</h1>
-        <nav>
-            <ul>
-                <li><a href="checklist.html">Checklist Primeiro Plantão</a></li>
-                <li><a href="residencia.html">Estudo Para Residência</a></li>
-                <li><a href="pratica.html">Estudo Para Prática do Generalista</a></li>
-                <li><a href="emprego.html">Oportunidades de Emprego Para Recém Formados</a></li>
-                <li><a href="siteseapps.html">Lista de Sites/APPs úteis</a></li>
-                <li><a href="listanegra.html">Lista Negra</a></li>
-                <li><a href="precoplantao.html">Preço do Plantão</a></li>
-            </ul>
-        </nav>
+        <!-- Navegação aqui... -->
     </header>
+
+    <main>
+        <div class="topic"><a href="checklist.html">Checklist Primeiro Plantão</a></div>
+        <div class="topic"><a href="residencia.html">Estudo Para Residência</a></div>
+        <div class="topic"><a href="pratica.html">Estudo Para Prática</a></div>
+        <div class="topic"><a href="emprego.html">Oportunidades de Emprego </a></div>
+        <div class="topic"><a href="siteseapps.html">Lista de Sites/APPs úteis</a></div>
+        <div class="topic"><a href="listanegra.html">Lista Negra</a></div>
+        <div class="topic"><a href="precoplantao.html">Preço do Plantão</a></div>
+    </main>
+
     <footer>
         <p>Contato e informações adicionais aqui.</p>
     </footer>
