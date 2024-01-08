@@ -1,36 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia do Médico Recém Formado</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #343a40; /* Cor de fundo mais escura */
+    color: #f8f9fa; /* Cor do texto clara para contraste */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Altura mínima do corpo para preencher a altura da tela */
+}
+
+header {
+    background-color: #495057; /* Cabeçalho um pouco mais claro que o fundo */
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: #f8f9fa;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #007bff; /* Uma cor de destaque para a barra de navegação */
+}
+
+nav li {
+    padding: 10px 15px;
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f8f9fa;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out; /* Transição suave para mudança de cor */
+}
+
+nav a:hover, nav a:focus {
+    color: #adb5bd; /* Cor de hover mais clara para destaque */
+    text-decoration: none;
+}
+
+footer {
+    background-color: #212529; /* Cor de fundo do rodapé */
+    color: #868e96; /* Cor do texto do rodapé */
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Adicione outras regras CSS conforme necessário */
+
+    </style>
 </head>
 <body>
-    <h1>Guia do Médico Recém Formado</h1>
-    <ul>
-        <li>
-            <a href="checklist.html">Checklist Primeiro Plantão</a></li>
-
-        <li>
-            <a href="residencia.html">Estudo Para Residência</a></li>
-
-        <li>
-            <a href="pratica.html">Estudo Para Pŕatica do Generalista</a></li>
-
-        <li>
-            <a href="emprego.html">Oportunidades de Emprego Para Recem Formados</a></li>
-
-        <li>
-            <a href="siteseapps.html">Lista de Sites/APPs úteis</a></li>
-
-        <li>
-            <a href="listanegra.html">Lista Negra (empresas e cidades com histórico de mal-pagamento)</a></li>
-
-        <li>
-            <a href="precoplantao.html">Preço do Plantão</a></li>
-
-        
-    </ul>
+    <header>
+        <h1>Guia do Médico Recém Formado</h1>
+        <nav>
+            <ul>
+                <li><a href="checklist.html">Checklist Primeiro Plantão</a></li>
+                <li><a href="residencia.html">Estudo Para Residência</a></li>
+                <li><a href="pratica.html">Estudo Para Prática do Generalista</a></li>
+                <li><a href="emprego.html">Oportunidades de Emprego Para Recém Formados</a></li>
+                <li><a href="siteseapps.html">Lista de Sites/APPs úteis</a></li>
+                <li><a href="listanegra.html">Lista Negra</a></li>
+                <li><a href="precoplantao.html">Preço do Plantão</a></li>
+            </ul>
+        </nav>
+    </header>
+    <footer>
+        <p>Contato e informações adicionais aqui.</p>
+    </footer>
 </body>
 </html>
