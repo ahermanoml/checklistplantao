@@ -75,6 +75,19 @@
  <circle cx="570.9" cy="692.9" id="2">
  </circle>
 </svg>
-    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+    var svgObject = document.getElementById('mapaBrasil').contentDocument;
+    var paths = svgObject.getElementsByTagName('path');
+    for(var i = 0; i < paths.length; i++) {
+        paths[i].addEventListener('mouseover', function() {
+            console.log('Entrou no estado: ' + this.id);
+        });
+        paths[i].addEventListener('mouseout', function() {
+            console.log('Saiu do estado: ' + this.id);
+        });
+    }
+};
+    </script>
 </body>
 </html>
