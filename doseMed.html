@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Dose de Medicamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Calculadora de Dose de Fentanil </h2>
+    <h3>VR: 0,5 a 5mcg/kg/h</h3>
+    <form id="doseForm">
+        <label for="concentracao">Concentração da solução (mcg/ml):</label><br>
+        <input type="number" id="concentracao" name="concentracao"><br>
+
+        <label for="peso">Peso do paciente (kg):</label><br>
+        <input type="number" id="peso" name="peso"><br>
+
+        <label for="taxaInfusao">Taxa de infusão atual (ml/h):</label><br>
+        <input type="number" id="taxaInfusao" name="taxaInfusao"><br>
+
+        <input type="button" value="Calcular" onclick="calcularDose()">
+    </form>
+
+    <p id="resultado"></p>
+
+    <script >
+        function calcularDose() {
+    var concentracao = document.getElementById('concentracao').value;
+    var peso = document.getElementById('peso').value;
+    var taxaInfusao = document.getElementById('taxaInfusao').value;
+
+    if (concentracao > 0 && peso > 0 && taxaInfusao > 0) {
+        var dose = (concentracao * taxaInfusao) / peso;
+        document.getElementById('resultado').innerText = `Dose de Fentanil: ${dose.toFixed(2)} mcg/kg/h`;
+    } else {
+        document.getElementById('resultado').innerText = 'Por favor, insira valores válidos para todos os campos.';
+    }
+}
+
+    </script>
+</body>
+</html>
