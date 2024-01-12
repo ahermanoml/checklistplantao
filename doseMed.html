@@ -3,13 +3,19 @@
 <head>
     <title>Calculadora de Dose de Medicamento</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <a href="index.html">Home</a>
     <h2>Calculadora de Dose de Fentanil </h2>
     <h3>VR: 0,5 a 5mcg/kg/h</h3>
     <form id="doseForm">
         <label for="concentracao">Concentração da solução (mcg/ml):</label><br>
-        <input type="number" id="concentracao" name="concentracao"><br>
+        <input type="number" id="concentracao" name="concentracao" list="fentaList">
+        <datalist id="fentaList">
+            <option value="50">50</option>
+            <option value="10">10</option>
+        </datalist><br>
 
         <label for="peso">Peso do paciente (kg):</label><br>
         <input type="number" id="peso" name="peso"><br>
@@ -22,6 +28,28 @@
 
     <p id="resultado"></p>
 
+    <h2>Calculadora de Dose de Noradrenalina</h2>
+    <h3>VR: 0,01 a 3mcg/kg/min</h3>
+    <form id="doseFormNoradrenalina">
+        <label for="concentracaoNoradrena">Concentração da solução de noradrenalina (mcg/ml):</label><br>
+        <input type="number" id="concentracaoNoradrena" name="concentracaoNoradrena" list="noradrenaList">
+        <datalist id="noradrenaList">
+            <option value="50">64</option>
+            <option value="10">160</option>
+            <option value="200">200</option>
+        </datalist><br>
+    
+        <label for="pesoNoradrena">Peso do paciente (kg):</label><br>
+        <input type="number" id="pesoNoradrena" name="pesoNoradrena"><br>
+    
+        <label for="taxaInfusaoNoradrena">Taxa de infusão atual (ml/h):</label><br>
+        <input type="number" id="taxaInfusaoNoradrena" name="taxaInfusaoNoradrena"><br>
+    
+        <input type="button" value="Calcular" onclick="calcularDoseNoradrenalina()">
+    </form>
+    
+    <p id="resultadoNoradrenalina"></p>
+
     <script >
         function calcularDose() {
     var concentracao = document.getElementById('concentracao').value;
@@ -33,6 +61,19 @@
         document.getElementById('resultado').innerText = `Dose de Fentanil: ${dose.toFixed(2)} mcg/kg/h`;
     } else {
         document.getElementById('resultado').innerText = 'Por favor, insira valores válidos para todos os campos.';
+    }
+}
+function calcularDoseNoradrenalina() {
+    var concentracao = document.getElementById('concentracaoNoradrena').value;
+    var peso = document.getElementById('pesoNoradrena').value;
+    var taxaInfusao = document.getElementById('taxaInfusaoNoradrena').value;
+
+    if (concentracao > 0 && peso > 0 && taxaInfusao > 0) {
+        var dose = (concentracao * taxaInfusao) / peso; // mcg/kg/h
+        var dosePorMinuto = dose / 60; // Convertendo para mcg/kg/min
+        document.getElementById('resultadoNoradrenalina').innerText = `Dose de Noradrenalina: ${dosePorMinuto.toFixed(2)} mcg/kg/min`;
+    } else {
+        document.getElementById('resultadoNoradrenalina').innerText = 'Por favor, insira valores válidos para todos os campos.';
     }
 }
 
