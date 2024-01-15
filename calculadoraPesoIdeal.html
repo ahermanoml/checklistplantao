@@ -2,50 +2,12 @@
 <html>
 <head>
     <title>Calculadora de Peso Ideal e Volume Corrente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script>
-        function calcularPesoVolume() {
-            var altura = document.getElementById('altura').value;
-            var sexo = document.querySelector('input[name="sexo"]:checked').value;
-            var situacao = document.querySelector('input[name="situacao"]:checked').value;
-            var pesoIdeal;
-            var volumeCorrente;
 
-            if (sexo === 'masculino') {
-                pesoIdeal = 50 + 0.91 * (altura - 152.4);
-            } else {
-                pesoIdeal = 45.5 + 0.91 * (altura - 152.4);
-            }
-
-            if (situacao === 'normal') {
-                volumeCorrente = Math.round(pesoIdeal * 6) + " a " + Math.round(pesoIdeal * 8) + " ml";
-            } else { // SARA
-                volumeCorrente = Math.round(pesoIdeal * 4) + " a " + Math.round(pesoIdeal * 6) + " ml";
-            }
-
-            var resultadoDiv = document.getElementById('resultado');
-
-            // Limpa o conteúdo anterior
-            resultadoDiv.innerHTML = '';
-
-            // Cria um novo elemento h3
-            var resultadoH3 = document.createElement('h3');
-            resultadoH3.innerText = "Peso Ideal: " + pesoIdeal.toFixed(2) + " kg\n" +
-                                    "Faixa de Volume Corrente: " + volumeCorrente;
-
-            // Insere o elemento h3 no div de resultado
-            resultadoDiv.appendChild(resultadoH3);
-
-
-
-
-
-
-
-        }
-    </script>
 </head>
 <body>
+    <a href="index.html">Home</a>
     <h2>Parâmetros Ventilatórios (VCV)</h2>
     <label for="altura">Altura (cm):</label>
     <input type="number" id="altura" placeholder="Insira a altura em cm"><br><br>
@@ -83,4 +45,38 @@
     </div>
 
 </body>
+<script>
+    function calcularPesoVolume() {
+        var altura = document.getElementById('altura').value;
+        var sexo = document.querySelector('input[name="sexo"]:checked').value;
+        var situacao = document.querySelector('input[name="situacao"]:checked').value;
+        var pesoIdeal;
+        var volumeCorrente;
+
+        if (sexo === 'masculino') {
+            pesoIdeal = 50 + 0.91 * (altura - 152.4);
+        } else {
+            pesoIdeal = 45.5 + 0.91 * (altura - 152.4);
+        }
+
+        if (situacao === 'normal') {
+            volumeCorrente = Math.round(pesoIdeal * 6) + " a " + Math.round(pesoIdeal * 8) + " ml";
+        } else { // SARA
+            volumeCorrente = Math.round(pesoIdeal * 4) + " a " + Math.round(pesoIdeal * 6) + " ml";
+        }
+
+        var resultadoDiv = document.getElementById('resultado');
+
+        // Limpa o conteúdo anterior
+        resultadoDiv.innerHTML = '';
+
+        // Cria um novo elemento h3
+        var resultadoH3 = document.createElement('h3');
+        resultadoH3.innerText = "Peso Ideal: " + pesoIdeal.toFixed(2) + " kg\n" +
+                                "Faixa de Volume Corrente: " + volumeCorrente;
+
+        // Insere o elemento h3 no div de resultado
+        resultadoDiv.appendChild(resultadoH3);
+    }
+</script>
 </html>
