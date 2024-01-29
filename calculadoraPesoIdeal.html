@@ -46,6 +46,34 @@
 
 </body>
 <script>
+function calcularPesoVolume() {
+    // Obtém a altura do usuário
+    let altura = document.getElementById("altura").value;
+
+    // Verifica o sexo selecionado
+    let sexo = document.querySelector('input[name="sexo"]:checked').value;
+
+    // Calcula o peso ideal
+    let pesoIdeal = sexo === "masculino" ? 50 + 0.91 * (altura - 152.4) : 45.5 + 0.91 * (altura - 152.4);
+
+    // Calcula o volume corrente mínimo e máximo
+    let volumeCorrenteMin = pesoIdeal * 6; // 6 mL/kg
+    let volumeCorrenteMax = pesoIdeal * 8; // 8 mL/kg
+
+    // Exibe os resultados
+    document.getElementById("resultado").innerHTML = `
+        <p>Peso Ideal: ${pesoIdeal.toFixed(2)} kg</p>
+        <p>Volume Corrente: De ${volumeCorrenteMin.toFixed(2)} mL a ${volumeCorrenteMax.toFixed(2)} mL</p>
+    `;
+}
+
+// Certifique-se de que a altura é um número válido
+document.getElementById("altura").addEventListener("input", function() {
+    let altura = this.value;
+    if (isNaN(altura) || altura <= 0) {
+        this.value = '';
+    }
+});
 
 </script>
 </html>
